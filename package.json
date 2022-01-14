@@ -1,5 +1,15 @@
 {
   "devDependencies": {
-    "bootstrap": "^5.1.3"
-  }
+    "@symfony/webpack-encore": "^1.7.0",
+    "bootstrap": "^5.1.3",
+    "sass": "^1.48.0",
+    "sass-loader": "^12.0.0",
+    "webpack-notifier": "^1.6.0"
+  },
+  "name": "KiaLaPlusGrosse",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Axelbruget/KiaLaPlusGrosse.git",
+  "author": "Axel <axelbruget@gmail.com>",
+  "license": "MIT"
 }
