@@ -13,11 +13,11 @@ services:
             - php
 
     mysql:
-        image: mysql:5.7
+        image: mysql:8.0
         command: "--default-authentication-plugin=mysql_native_password"
         container_name: KiaLaPlusGrosse_mysql
         volumes:
-            - .docker/init:/docker-entrypoint-initdb.d
+            - ./mysql:/var/lib/mysql
         ports:
             - "3315:3306"
         environment:
@@ -56,3 +56,6 @@ services:
         ports:
             - "1085:1080"
             - "1035:1025"
+
+volumes:
+  db-data:
