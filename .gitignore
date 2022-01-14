@@ -9,7 +9,7 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
-
+node_modules
 .idea
 .env.local
 
