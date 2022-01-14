@@ -1,0 +1,58 @@
+version: '3'
+services:
+    apache:
+        build: .docker/apache
+        container_name: KiaLaPlusGrosse_apache
+        ports:
+            - "8090:80"
+        volumes:
+            - .docker/config/vhosts:/etc/apache2/sites-enabled
+            - .:/var/www/KiaLaPlusGrosse
+            - .docker/data/apache:/var/log/apache2
+        depends_on:
+            - php
+
+    mysql:
+        image: mysql:5.7
+        command: "--default-authentication-plugin=mysql_native_password"
+        container_name: KiaLaPlusGrosse_mysql
+        volumes:
+            - .docker/init:/docker-entrypoint-initdb.d
+        ports:
+            - "3315:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: KiaLaPlusGrosse
+            MYSQL_USER: KiaLaPlusGrosse
+            MYSQL_PASSWORD: KiaLaPlusGrosse
+
+    php:
+        build: .docker/php
+        container_name: KiaLaPlusGrosse_php
+        volumes:
+            - .:/var/www/KiaLaPlusGrosse
+        environment:
+            PHP_IDE_CONFIG: "serverName=xDebug-serv"
+            mailcatcher_host: KiaLaPlusGrosse_mailcatcher
+        depends_on:
+            - mailcatcher
+            - mysql
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: KiaLaPlusGrosse_phpmyadmin
+        environment:
+            PMA_HOST: mysql
+            PMA_PORT: 3306
+        ports:
+            - "8085:80"
+        links:
+            - mysql
+
+    mailcatcher:
+        container_name: KiaLaPlusGrosse_mailcatcher
+        restart: on-failure
+        image: dockage/mailcatcher:0.7.1
+        ports:
+            - "1085:1080"
+            - "1035:1025"
