@@ -6,5 +6,33 @@
 
 {% block body_content %}
     <h1 class="text-center"><span class="text-danger">Kia</span><span class="text-primary">La</span><span class="text-success">Plus</span><span class="text-info">Grosse</span></h1>
+
+    <ul class="nav justify-content-center nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                <i class="fas fa-table-tennis"></i> Ping-Pong
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                <i class="fa fa-globe-europe"></i> GeoGuessr
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                <i class="fas fa-bowling-ball"></i> Bowling</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            Je passe la pire des soirées j'ai envie de pleurer toutes les larmes de mon corps
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            La mort n'est que libération de cette salle vie de chienne
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            Le véritable enfer est la vie que l'on doit subir tous les jours et les sourires que l'on doit supporter
+        </div>
+    </div>
 {% endblock %}
 
