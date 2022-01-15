@@ -8,10 +8,10 @@ RUN apt update \
     && pecl install apcu \
     && docker-php-ext-enable apcu \
     && docker-php-ext-configure zip \
-    && docker-php-ext-install zip
+    && docker-php-ext-install zip \
 
 # NPM + YARN install
-RUN apt-get install -y npm
+RUN apt install -y npm
 RUN npm install --global yarn
 
 WORKDIR /var/www/KiaLaPlusGrosse

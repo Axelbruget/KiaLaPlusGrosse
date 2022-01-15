@@ -1,3 +1,6 @@
+build_dev:
+	docker-compose build --no-cache
+
 start_dev:
 	docker-compose up -d
 

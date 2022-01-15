@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom-2">
+    <a class="navbar-brand" href="#">
+        <h1 class="text-center"><span class="text-danger">Kia</span><span class="text-primary">La</span><span class="text-success">Plus</span><span class="text-info">Grosse</span></h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+{#            <li class="nav-item active">#}
+{#                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>#}
+{#            </li>#}
+        </ul>
+        <form class="form-inline my-2 my-lg-0 d-flex float-end" action="{{ path('app_login') }}" method="post">
+            <input class="form-control mr-sm-2" type="search" placeholder="Email" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+        </form>
+    </div>
+</nav>
