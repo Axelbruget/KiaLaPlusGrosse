@@ -8,7 +8,7 @@ RUN apt update \
     && pecl install apcu \
     && docker-php-ext-enable apcu \
     && docker-php-ext-configure zip \
-    && docker-php-ext-install zip \
+    && docker-php-ext-install zip
 
 # NPM + YARN install
 RUN apt-get install -y npm
