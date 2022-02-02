@@ -32,7 +32,7 @@ services:
         volumes:
             - .:/var/www/KiaLaPlusGrosse
         environment:
-            PHP_IDE_CONFIG: "serverName=xDebug-serv"
+            PHP_IDE_CONFIG: "serverName=xdebug-server"
             mailcatcher_host: KiaLaPlusGrosse_mailcatcher
         depends_on:
             - mailcatcher
