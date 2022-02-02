@@ -11,6 +11,11 @@
     <ul class="nav justify-content-center nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                <i class="fas fa-th"></i> Sutom
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
                 <i class="fas fa-table-tennis"></i> Ping-Pong
             </button>
         </li>
@@ -26,6 +31,13 @@
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <ul>
+                {% for player in players %}
+                    <li>{{ player.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
             Je passe la pire des soirées j'ai envie de pleurer toutes les larmes de mon corps
         </div>
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
